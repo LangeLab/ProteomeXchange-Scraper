@@ -57,7 +57,7 @@ def get_page_sources(link, waitTime=5, fullDump=True):
     full_dataframe.to_csv('full_metadata_of_PX.tsv', index=False, sep='\t')
     print("Web scraping complete.")
 
-# get all databases from ProteomeXchange
+# get all datasets from ProteomeXchange
 get_page_sources('http://proteomecentral.proteomexchange.org/cgi/GetDataset')
 full_dataframe = pd.read_csv('full_metadata_of_PX.tsv', sep='\t')
 
@@ -71,7 +71,9 @@ filtered_df = full_dataframe[full_dataframe['Species'].str.contains('homo sapien
 pediatric_cancer_k_list = ['child', 'pediatric', 'paediatric', 'leukemia', 'medulloblastoma', 'astrocytoma', 'glioma', 'retinoblastoma', 'ewing'
                           , 'osteosarcoma', 'lymphoma', 'all', 'aml', 'rhabdomyosarcoma', 'wilm', 'nephroblastoma', 'glioblastoma', 'ependymoma', 'atrt'
                           , 'oligodendroglioma', 'pnet', 'pineoblastoma', 'rhabdoid', 'craniopharyngioma', 'dnet', 'schwannoma', 'meningioma', 
-                           'choroid plexus', 'chordoma', 'neuroma', 'teratoma', 'youth', 'teen', 'infant', 'babies', 'choriocarinoma', 'bone cancer', 'neuroblastoma', 'embryonal', 'neurilemmoma']
+                           'choroid plexus', 'chordoma', 'neuroma', 'teratoma', 'youth', 'teen', 'adolescent', 'infant', 'babies', 'choriocarinoma', 'bone cancer', 'neuroblastoma', 'embryonal', 'neurilemmoma'
+                           'brain cancer', 'brain tumo', 'spinal cord tumo', 'sarcoma', 'thyroid cancer', 'thyroid carcinoma', 'kidney cancer', 'kidney tumo', 'central nervous system tumo',
+                           'CNS tumo', 'dysembryoplastic neuroepithelial', 'primitive neuroectodermal', 'teratoid']
 
 def keyword_matching(data, column2look=['Title', 'Keywords'], keyword_list=pediatric_cancer_k_list):
     binary_matches = pd.DataFrame()
