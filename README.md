@@ -1,10 +1,17 @@
 # ProteomeXchange-Scraper
 Automated web scraper to collect and filter pediatric cancer datasets from ProteomeXchange.
 
+## Usage
+A user can either filter ProteomeXchange datasets using a default pediatric cancer related keyword list, or input their own keyword list.
+
+```
+  usage: proteomeXchange_scraper.py [-h] [-i INPUTFILE]
+  options:
+  -h, --help            show this help message and exit
+  -i INPUTFILE, --inputFile INPUTFILE
+                        name of text file w/ each keyword on a new line (default: None)
+```                        
+                        
 ## TODOs - Features To Add:
 
-- Allow for the user to provide the keyword list for filtering. Ex: through a text file w/ each keyword separated by a new line or comma. Then pass in the input file as an argument when running the script.
-
 - Include a more detailed search by accessing the inside of a particular metadata entry, then searching for the keywords within the summary/abstract.
-
-- Only add newly uploaded ProteomXchange datasets to a preloaded version of the full dataframe. Ex: have the script compare the most recent entry from the preloaded data to the ProteomeXchange metadata to know where/which page the new run should stop.
